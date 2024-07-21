@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({ setContent, currentContent }) {
+  const isActive = (content) => currentContent === content ? 'active' : '';
+  
   return (
     <div>
       <div className="container">
@@ -13,7 +15,10 @@ function Navbar() {
         <nav className="menu">
           <ul>
             <li>
-              <a href="#">Sales(1.4)</a>
+              <a href="#" className={isActive('Help')} onClick={() => setContent('Help')}>Help(F1)</a>
+            </li>
+            <li>
+              <a href="#" className={isActive('Sales')} onClick={() => setContent('Sales')}>Sales(1.4)</a>
             </li>
             <li>
               <a href="#">Logistics(6.2)</a>

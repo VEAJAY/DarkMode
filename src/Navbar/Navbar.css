@@ -23,9 +23,11 @@
 .menu ul li a {
     font-size: 23px;
     color: white;
-    transition: 0.3s;
     font-weight: 600;
 }
 .menu ul li a:hover {
+    color: rgb(186, 186, 186);
+}
+.menu ul li a.active {
     color: cyan;
 }

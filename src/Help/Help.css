@@ -1,0 +1,15 @@
+* {
+    color: white;
+}
+ul li {
+    padding: 60px;
+}
+.help-list li p {
+    font-size: 30px;
+}
+.title {
+    color: cyan;
+}
+.important {
+    color: red;
+}

@@ -8,7 +8,7 @@ function Message() {
         <div className="container-msg">
             <h2>
               {/* INPUT MESSAGES BELOW! */}
-                Dark Mode is currently in development, a sub-program to replace the Genesis legacy system!
+                UPDATE: Dark Mode is currently in development, a sub-program to replace the Genesis legacy system!
             </h2>
         </div>
         
