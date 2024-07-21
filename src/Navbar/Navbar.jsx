@@ -16,13 +16,13 @@ function Navbar() {
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Orders</a>
+              <a href="#">Logistics(6.2)</a>
             </li>
             <li>
-              <a href="#">Journal</a>
+              <a href="#">Journal(3.4)</a>
             </li>
             <li>
-              <a href="#">Reports</a>
+              <a href="#">Reports(9.5)</a>
             </li>
           </ul>
         </nav>

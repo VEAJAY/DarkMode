@@ -1,0 +1,14 @@
+h2 {
+    border: 1px solid #ddd;
+    color: greenyellow;
+    font-weight: 100;
+    font-size: 21px;
+    width: 600px; /* Change the size of message box */
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container-msg {
+    display: flex;
+    justify-content: center;
+}
