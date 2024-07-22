@@ -9,7 +9,7 @@ function Navbar({ setContent, currentContent }) {
     <div>
       <div className="container">
         <div className="logo">
-          <h1>Dark<span>Mode</span></h1>
+          <h1>Dark<span>Mode</span>(Genesis)</h1>
         </div>
 
         <nav className="menu">
