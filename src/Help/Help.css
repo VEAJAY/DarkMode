@@ -2,10 +2,10 @@
     color: white;
 }
 ul li {
-    padding: 60px;
+    padding: 30px 60px;
 }
 .help-list li p {
-    font-size: 30px;
+    font-size: 25px;
 }
 .title {
     color: cyan;
