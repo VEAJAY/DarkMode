@@ -1,0 +1,27 @@
+.terminal {
+    display: flex;
+}
+.terminal-left {
+    border-right: 2px dashed white;
+    width: 50%;
+    height: 80vh;
+    padding: 120px;
+}
+.terminal-right {
+    /* border: 2px solid green; */
+    width: 50%;
+    height: 80vh;
+    padding: 120px;
+}
+.toggle {
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: rgba(0, 0 , 0, 0.2);
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+.toggle:hover {
+    background-color: rgba(101, 101, 101, 0.2);
+    border: 2px solid white;
+}

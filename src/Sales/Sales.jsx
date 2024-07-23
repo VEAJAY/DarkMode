@@ -7,6 +7,13 @@ function Sales() {
   const [quantity, setQuantity] = useState(1);
   const [modelNumber, setModelNumber] = useState('');
   const [loadIndicator, setLoadIndicator] = useState('CW');
+  const [pickupDate, setPickupDate] = useState('');
+
+  useEffect(() => {
+    // Get today's date in the format YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
+    setPickupDate(today);
+  }, []);
 
   const addItem = () => {
     if (items.length < 7) {
@@ -15,6 +22,7 @@ function Sales() {
         quantity,
         modelNumber,
         loadIndicator,
+        pickupDate,
       };
       setItems([...items, newItem]);
 
@@ -23,6 +31,7 @@ function Sales() {
       setQuantity(1);
       setModelNumber('');
       setLoadIndicator('CW');
+      setPickupDate(new Date().toISOString().split('T')[0]);
     }
   };
 
@@ -48,7 +57,7 @@ function Sales() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [items, itemNumber, quantity, modelNumber, loadIndicator]);
+  }, [items, itemNumber, quantity, modelNumber, loadIndicator, pickupDate]);
 
   return (
     <>
@@ -56,7 +65,7 @@ function Sales() {
         <div className="item-list">
           {items.map((item, index) => (
             <div className="item" key={index} onContextMenu={(e) => handleRightClick(e, index)}>
-              <p>({index + 1}) Item: {item.itemNumber} - {item.quantity} qty - {item.loadIndicator}</p>
+              <p>({index + 1}) Item: {item.itemNumber} - {item.quantity} qty - {item.loadIndicator} - Date: {item.pickupDate}</p>
             </div>
           ))}
         </div>
@@ -92,7 +101,7 @@ function Sales() {
               onChange={(e) => setModelNumber(e.target.value)}
             /><br /><br /><br />
 
-            <label htmlFor="cars">Load Indicator:</label><br />
+            <label htmlFor="load">Load Indicator:</label><br />
             <select
               id="load"
               name="load"
@@ -116,7 +125,13 @@ function Sales() {
             </select><br /><br /><br />
 
             <label htmlFor="">Pickup / Delivery Date:</label><br />
-            <input type="date" className="input-field" /><br /><br /><br />
+            <input
+              type="date"
+              className="input-field"
+              value={pickupDate}
+              onChange={(e) => setPickupDate(e.target.value)}
+              required
+            /><br /><br /><br />
 
             <h3>Customer Lookup</h3><br />
 
