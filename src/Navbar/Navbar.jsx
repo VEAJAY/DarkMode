@@ -30,7 +30,7 @@ function Navbar({ setContent, currentContent }) {
               <a href="#">Journal(3.4)</a>
             </li>
             <li>
-              <a href="#">Reports(9.5)</a>
+              <a href="#" className={isActive('Reports')} onClick={() => setContent('Reports')}>Reports(9.5)</a>
             </li>
           </ul>
         </nav>
