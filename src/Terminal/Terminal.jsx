@@ -1,52 +1,78 @@
-import React from 'react'
-
-import './Terminal.css'
+import React, { useState, useEffect } from 'react';
+import './Terminal.css';
 
 function Terminal() {
+  const [highlight, setHighlight] = useState(false);
+
+  const toggleHighlight = () => {
+    setHighlight(!highlight);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'F4') {
+      toggleHighlight();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+  const isHighlight = (value) => highlight && parseFloat(value) >= 1200;
+
   return (
     <div>
       <div className="terminal">
         <div className="terminal-left">
-
-          <h1>CUS 35 ------ 0.00</h1><br /><br />
-          <h1>CUS 38 ------ 0.00</h1><br /><br />
-          <h1>CUS 36 ------ 0.00</h1><br /><br />
-          <h1>CUS 37 ------ 0.00</h1><br /><br />
-
-          <h1>FRT 10 ------ 0.00</h1><br /><br />
-          <h1>FRT 11 ------ 0.00</h1><br /><br />
-          <h1>FRT 14 ------ 0.00</h1><br /><br />
-          <h1>FRT 15 ------ 0.00</h1><br /><br />
-
-          <h1>FRT 53 ------ 0.00</h1><br /><br />
-          <h1>FRT 45 ------ 0.00</h1><br /><br />
-          <h1>FRT 56 ------ 0.00</h1><br /><br />
-
+          {[
+            { label: 'CUS 35', value: 2894 },
+            { label: 'CUS 38', value: 1170 },
+            { label: 'CUS 36', value: 3390 },
+            { label: 'CUS 37', value: 887 },
+            { label: 'FRT 10', value: 1140 },
+            { label: 'FRT 11', value: 1261 },
+            { label: 'FRT 14', value: 0.00 },
+            { label: 'FRT 15', value: 0.00 },
+            { label: 'FRT 53', value: 5692 },
+            { label: 'FRT 45', value: 4112 },
+            { label: 'FRT 56', value: 0.00 },
+            { label: 'OFC 26', value: 0.00 }
+          ].map((item, index) => (
+            <h1 key={index} className={isHighlight(item.value) ? 'highlight' : ''}>
+              {item.label} ------ {item.value}<br/><br/>
+            </h1>
+          ))}
           <h3 style={{ color: 'greenyellow' }}>
-              **Toggle to view terminals <br /> over $1200
+            **Toggle to view terminals <br /> over $1200
           </h3>
-          <button className="toggle">Toggle (F6)</button>
+          <button className="toggle" onClick={toggleHighlight}>Toggle (F4)</button>
         </div>
         <div className="terminal-right">
-          <h1>SCO 13 ------ 0.00</h1><br /><br />
-          <h1>SCO 17 ------ 0.00</h1><br /><br />
-          <h1>SCO 18 ------ 0.00</h1><br /><br />
-          <h1>SCO 19 ------ 0.00</h1><br /><br />
-          <h1>SCO 41 ------ 0.00</h1><br /><br />
-          <h1>SCO 47 ------ 0.00</h1><br /><br />
-          <h1>SCO 33 ------ 0.00</h1><br /><br />
-          <h1>SCO 34 ------ 0.00</h1><br /><br />
-
-          <h1>GAR 19 ------ 0.00</h1><br /><br />
-          <h1>GAR 47 ------ 0.00</h1><br /><br />
-          <h1>GAR 18 ------ 0.00</h1><br /><br />
-          <h1>GAR 46 ------ 0.00</h1><br /><br />
-
+          {[
+            { label: 'SCO 13', value: 0.00 },
+            { label: 'SCO 17', value: 0.00 },
+            { label: 'SCO 18', value: 0.00 },
+            { label: 'SCO 19', value: 0.00 },
+            { label: 'SCO 41', value: 0.00 },
+            { label: 'SCO 47', value: 0.00 },
+            { label: 'SCO 33', value: 1877 },
+            { label: 'SCO 34', value: 1367 },
+            { label: 'GAR 19', value: 633 },
+            { label: 'GAR 47', value: 0.00 },
+            { label: 'GAR 18', value: 0.00 },
+            { label: 'GAR 46', value: 746 }
+          ].map((item, index) => (
+            <h1 key={index} className={isHighlight(item.value) ? 'highlight' : ''}>
+              {item.label} ------ {item.value}<br/><br/>
+            </h1>
+          ))}
         </div>
       </div>
-      
     </div>
-  )
+  );
 }
 
-export default Terminal
+export default Terminal;
