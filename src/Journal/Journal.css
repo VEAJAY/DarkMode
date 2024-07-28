@@ -1,0 +1,35 @@
+.journal-container {
+    /* background-color: brown; */
+    display: flex;
+    height: 80vh;
+    padding: 40px 0;
+    justify-content: space-between;
+}
+.first-form {
+    border-right: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    /* background-color: brown; */
+    /* padding: 0 60px; */
+    width: 30%;
+}
+.second-form {
+    border-right: 1px solid #ddd;
+    /* padding: 0 60px; */
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+.third-form {
+    /* padding: 0 60px; */
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+.search {
+    cursor: pointer;
+}
+.search:hover {
+    border: 1px solid #ddd;
+    background-color: rgba(176, 176, 176, 0.2);
+}

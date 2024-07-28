@@ -72,7 +72,7 @@ function Sales() {
 
         {/* START FORM */}
         <div className="form-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='sales-form'>
             <label htmlFor="">Item Number (UPC):</label><br />
             <input
               type="text"
