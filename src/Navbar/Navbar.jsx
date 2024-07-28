@@ -24,7 +24,7 @@ function Navbar({ setContent, currentContent }) {
               <a href="#" className={isActive('Terminal')} onClick={() => setContent('Terminal')}>Terminal(1.15)</a>
             </li>
             <li>
-              <a href="#">Logistics(6.2)</a>
+              <a href="#" className={isActive('Logistics')}onClick={() => setContent('Logistics')}>Logistics(6.2)</a>
             </li>
             <li>
               <a href="#">Journal(3.4)</a>

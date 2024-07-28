@@ -5,6 +5,7 @@ import Help from '../Help/Help'
 import Sales from '../Sales/Sales'
 import Terminal from '../Terminal/Terminal'
 import Reports from '../Reports/Reports'
+import Logistics from '../Logistics/Logistics'
 
 function Greenscreen({ content }) {
   return (
@@ -15,6 +16,7 @@ function Greenscreen({ content }) {
             {content === 'Sales' && <div><Sales /></div>}
             {content === 'Terminal' && <div><Terminal /></div>}
             {content === 'Reports' && <div><Reports /></div>}
+            {content === 'Logistics' && <div><Logistics /></div>}
         </div>
       </div>
     </div>

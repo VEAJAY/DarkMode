@@ -1,0 +1,25 @@
+.logic-screen {
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+.po-entry {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+.po-entry input {
+    margin-left: 20px;
+}
+.po-options {
+    margin-top: 50px;
+}
+.po-options ol li h3 {
+    padding: 8px;
+}
+.po-options ol li h3:hover {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
